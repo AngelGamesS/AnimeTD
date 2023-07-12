@@ -1,0 +1,14 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="CardDocument" src="project://database/Assets/UI/CardDocument.uxml?fileID=9197481963319205126&amp;guid=c07b7557e66ae42feae606288599e9ae&amp;type=3#CardDocument" />
+    <Style src="project://database/Assets/UI/USS/Panel_USS.uss?fileID=7433441132597879392&amp;guid=7d4419d9f387e42e0ae91af94dc0e76a&amp;type=3#Panel_USS" />
+    <ui:VisualElement name="Screen" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+        <ui:VisualElement name="Background" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); height: auto; min-height: auto; max-height: 40%; position: relative; bottom: auto; top: 55%; width: 90%; align-self: center; opacity: 1; transition-property: all; transition-duration: 0s; transition-timing-function: ease; translate: 0 0; transform-origin: center;">
+            <ui:ScrollView mode="Horizontal" name="ScrollView" vertical-scroller-visibility="Hidden" horizontal-scroller-visibility="AlwaysVisible" style="padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; flex-grow: 1; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; flex-direction: column; justify-content: space-between; align-items: stretch; flex-shrink: 0; align-self: auto; background-color: rgba(67, 67, 67, 0); top: 115%;">
+                <ui:Instance template="CardDocument" name="CardDocument" style="align-self: center; align-items: stretch; flex-grow: 0; min-height: auto;" />
+                <ui:Instance template="CardDocument" name="CardDocument" style="align-self: center; flex-grow: 0;" />
+                <ui:Instance template="CardDocument" name="CardDocument" style="align-self: center; justify-content: flex-start; flex-grow: 0;" />
+                <ui:Instance template="CardDocument" name="CardDocument" style="align-self: center; flex-grow: 0;" />
+            </ui:ScrollView>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

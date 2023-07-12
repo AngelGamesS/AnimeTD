@@ -1,0 +1,46 @@
+.moveUp {
+    translate: 0 -115%;
+    transition-property: translate;
+    transition-duration: 0.5s;
+    transition-delay: 0s;
+}
+
+#unity-content-container {
+    justify-content: flex-start;
+    align-items: stretch;
+    margin-bottom: 0;
+}
+
+.unity-scroller {
+    width: 100%;
+    position: relative;
+    top: auto;
+    overflow: visible;
+    margin-top: 0;
+    align-self: flex-end;
+    justify-content: center;
+    max-height: 15px;
+}
+
+#unity-content-and-vertical-scroll-container {
+    margin-bottom: 0;
+    width: auto;
+    height: auto;
+    padding-bottom: 0;
+}
+
+.unity-slider {
+    min-height: 10px;
+    height: 20px;
+}
+
+.unity-scroll-view__content-container {
+}
+
+.unity-scroller__low-button {
+    height: 20px;
+}
+
+.unity-scroller__high-button {
+    height: 20px;
+}

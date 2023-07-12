@@ -1,0 +1,13 @@
+#Container:hover {
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+    translate: 0 -20px;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+}
