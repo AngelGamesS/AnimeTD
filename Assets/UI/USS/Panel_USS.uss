@@ -19,7 +19,7 @@
     margin-top: 0;
     align-self: flex-end;
     justify-content: center;
-    max-height: 15px;
+    max-height: 20px;
 }
 
 #unity-content-and-vertical-scroll-container {
