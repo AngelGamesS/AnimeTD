@@ -46,7 +46,7 @@ Material:
     - _MinThickness: 0.51
     - _Normal_Threshold: 0.38
     - _OutlineFactor: 1
-    - _OutlineThickness: 1
+    - _OutlineThickness: 0.17
     - _OutlineWidth: 10
     m_Colors:
     - _Outline_Color: {r: 0, g: 0, b: 0, a: 0}
