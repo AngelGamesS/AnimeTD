@@ -7,7 +7,7 @@ public class TileComponent : MonoBehaviour
     public TileType type;
     public bool placeable;
     private bool towerWasPlaced;
-    
+        
     // Start is called before the first frame update
     void Start()
     {
