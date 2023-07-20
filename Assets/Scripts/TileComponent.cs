@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class TileComponent : MonoBehaviour
 {
+
     public TileType type;
+    public GameObject overEffect;
     public bool placeable;
     private bool towerWasPlaced;
         
@@ -17,11 +19,24 @@ public class TileComponent : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnMouseEnter()
     {
-        
+        if(overEffect != null)
+            overEffect.SetActive(true);
     }
+    private void OnMouseExit()
+    {
+        if (overEffect != null)
+            overEffect.SetActive(false);
+    }
+
+    private void OnMouseUp()
+    {
+        if (towerWasPlaced == false && type != TileType.EnemyPath)
+            CardPanelController.Instance.ChooseTower(this);
+    }
+
+    public void SetPlaced(bool status) => towerWasPlaced = true;
 }
 
 public enum TileType{

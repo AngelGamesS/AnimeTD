@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FullScreenOutlineShader
-  m_Shader: {fileID: -6465566751694194690, guid: 5d8af6cf7fcb84b0cb9d456a65fdd428,
+  m_Name: TileDecalMat
+  m_Shader: {fileID: -6465566751694194690, guid: a96acffebe2e9fc4db208cc4aeb52c30,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -24,6 +24,14 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Base_Map:
+        m_Texture: {fileID: 2800000, guid: abac9de06d424a142b5e8df02867d61f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal_Map:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -38,16 +46,24 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Color_Threshold: 1.4
-    - _Depth_Threshold: 0.47
-    - _MaxDepth: 2000
-    - _MaxDrawingDistance: 40
-    - _MaxThickness: 0
-    - _MinThickness: 0.51
-    - _Normal_Threshold: 0.81
-    - _OutlineFactor: 1
-    - _OutlineThickness: 0.5
-    - _OutlineWidth: 10
+    - _DecalMeshBiasType: 0
+    - _DecalMeshDepthBias: 0
+    - _DecalMeshViewBias: 0
+    - _DrawOrder: 0
+    - _Normal_Blend: 0.5
     m_Colors:
-    - _Outline_Color: {r: 0, g: 0, b: 0, a: 0}
+    - _Color_Tint: {r: 1.4980391, g: 1.3700581, b: 0, a: 1}
   m_BuildTextureStacks: []
+--- !u!114 &6867064375490007924
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 7
