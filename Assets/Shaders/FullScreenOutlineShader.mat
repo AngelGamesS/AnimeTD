@@ -38,15 +38,15 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Color_Threshold: 5.81
-    - _Depth_Threshold: 0.44
+    - _Color_Threshold: 1.4
+    - _Depth_Threshold: 0.47
     - _MaxDepth: 2000
     - _MaxDrawingDistance: 40
     - _MaxThickness: 0
     - _MinThickness: 0.51
-    - _Normal_Threshold: 0.38
+    - _Normal_Threshold: 0.81
     - _OutlineFactor: 1
-    - _OutlineThickness: 0.17
+    - _OutlineThickness: 0.5
     - _OutlineWidth: 10
     m_Colors:
     - _Outline_Color: {r: 0, g: 0, b: 0, a: 0}
