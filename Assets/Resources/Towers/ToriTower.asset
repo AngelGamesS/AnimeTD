@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3825fa27942a2224dadee68e9e97f810, type: 3}
+  m_Name: ToriTower
+  m_EditorClassIdentifier: 
+  towerName: Tori Tower
+  description: Gives money every few seconds
+  image: {fileID: 0}
+  prefab: {fileID: 6274534639375505274, guid: 9a24e7131482a2346a0314b65698f733, type: 3}
+  price: 0

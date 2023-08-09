@@ -15,13 +15,12 @@ public class Tower : MonoBehaviour
 
     private void LookAtNearestPath()
     {
-        var tiles = Physics.OverlapSphere(transform.position, 10f, tileMask);
+        var tiles = Physics.OverlapSphere(transform.position, 5f, tileMask);
         TileComponent closestTile = GetClosestPathTile(tiles);
-
         Vector3 fixedTilePos = new Vector3(closestTile.transform.position.x, transform.position.y, closestTile.transform.position.z);
-        Vector3 dir = fixedTilePos - transform.position;
+        //Vector3 dir = (transform.position - fixedTilePos).normalized;
 
-        transform.LookAt(dir);
+        transform.LookAt(fixedTilePos);
 
     }
 
@@ -29,12 +28,14 @@ public class Tower : MonoBehaviour
     {
         float nearestTileDist = 100f;
         TileComponent closestTile = null;
+        Vector3 towerPos = transform.position;
+        towerPos.y = 0;
         foreach (var tile in tiles)
         {
             TileComponent tileComp = tile.GetComponent<TileComponent>();
             if (tileComp != null && tileComp.type == TileType.EnemyPath)
             {
-                var tempDist = Vector3.Distance(tileComp.transform.position, transform.position);
+                var tempDist = Vector3.Distance(tileComp.transform.position, towerPos);
                 if (tempDist < nearestTileDist)
                 {
                     nearestTileDist = tempDist;

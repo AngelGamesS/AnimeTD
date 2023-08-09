@@ -39,7 +39,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Color_Threshold: 1.4
-    - _Depth_Threshold: 0.47
+    - _Depth_Threshold: 0.1
     - _MaxDepth: 2000
     - _MaxDrawingDistance: 40
     - _MaxThickness: 0

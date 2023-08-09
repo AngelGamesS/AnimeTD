@@ -1416,7 +1416,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileMask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 256
   rangeObject: {fileID: 8539737348587713875}
 --- !u!65 &1023676469822957029
 BoxCollider:
