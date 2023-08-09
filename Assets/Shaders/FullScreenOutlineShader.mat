@@ -44,7 +44,7 @@ Material:
     - _MaxDrawingDistance: 40
     - _MaxThickness: 0
     - _MinThickness: 0.51
-    - _Normal_Threshold: 0.81
+    - _Normal_Threshold: 1.26
     - _OutlineFactor: 1
     - _OutlineThickness: 0.5
     - _OutlineWidth: 10
