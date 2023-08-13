@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int _wavHp = 20;
     [SerializeField] private int _playerLevel = 1;
     [SerializeField] private float _playerExp = 0;
+    [SerializeField] private int _playerCoin = 0;
     public GameObject endPortal;
     [Header("Event Channels")]
     [SerializeField] private GameEventChannelSO gameEventChannel;
@@ -28,4 +29,11 @@ public class GameManager : MonoBehaviour
         gameEventChannel.RaiseOnCurrentWaveHpChange(_wavHp);
     }
 
+    public void HandleEnemyDeath(float earnExp, int earnCoin) 
+    {
+        _playerExp += earnExp;
+        _playerCoin += earnCoin;
+        gameEventChannel.RaiseOnUpdateExpAmount(_playerExp);
+        gameEventChannel.RaiseOnCoinAmountUpdate(_playerCoin);
+    }
 }

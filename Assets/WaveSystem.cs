@@ -5,13 +5,15 @@ public class WaveSystem : MonoBehaviour
 {
     [SerializeField] private float countdown;
     [SerializeField] private GameObject spawnPoint;
-    public Wave wave;
+    public WaveSO[] waves;
+    private Wave currentWave;
 
-    private int currentWaveIntervalIndex = 0;
+    public int currentWaveIntervalIndex = 0;
     private bool readyToCountDown = true;
 
     private void Start()
     {
+        currentWave = waves[0].wave;
         InitializeWaveIntervals();
     }
 
@@ -25,35 +27,47 @@ public class WaveSystem : MonoBehaviour
         if (countdown <= 0)
         {
             readyToCountDown = false;
-            countdown = wave.waveIntervals[currentWaveIntervalIndex].timeToNextWaveInterval;
-            StartCoroutine(SpawnWave());
-        }
-
-        if (wave.waveIntervals[currentWaveIntervalIndex].enemiesLeft == 0)
-        {
-            readyToCountDown = true;
-            currentWaveIntervalIndex++;
-            if (currentWaveIntervalIndex < wave.waveIntervals.Length)
+            if (currentWaveIntervalIndex < currentWave.waveIntervals.Length)
             {
-                countdown = wave.waveIntervals[currentWaveIntervalIndex].timeToNextWaveInterval;
+                countdown = currentWave.waveIntervals[currentWaveIntervalIndex].timeToNextWaveInterval;
+                StartCoroutine(SpawnWave());
+            }
+            else
+            {
+                countdown = Mathf.Infinity;
             }
             
+        }
+
+        if (currentWaveIntervalIndex < currentWave.waveIntervals.Length && currentWave.waveIntervals[currentWaveIntervalIndex].enemiesLeft == 0)
+        {
+            currentWaveIntervalIndex++;
+            if (currentWaveIntervalIndex < currentWave.waveIntervals.Length)
+            {
+                readyToCountDown = true;
+            }
+            else
+            {
+                countdown = Mathf.Infinity;
+            }
+
         }
     }
 
     private void InitializeWaveIntervals()
     {
-        foreach (WaveInterval waveInterval in wave.waveIntervals)
+        foreach (WaveInterval waveInterval in currentWave.waveIntervals)
         {
             waveInterval.enemiesLeft = waveInterval.enemies.Length;
         }
+        currentWave.waveIntervals[currentWave.waveIntervals.Length - 1].timeToNextWaveInterval = Mathf.Infinity;
     }
 
     private IEnumerator SpawnWave()
     {
-        if (currentWaveIntervalIndex < wave.waveIntervals.Length)
+        if (currentWaveIntervalIndex < currentWave.waveIntervals.Length)
         {
-            WaveInterval currentWaveInterval = wave.waveIntervals[currentWaveIntervalIndex];
+            WaveInterval currentWaveInterval = currentWave.waveIntervals[currentWaveIntervalIndex];
 
             foreach (GameObject enemyPrefab in currentWaveInterval.enemies)
             {

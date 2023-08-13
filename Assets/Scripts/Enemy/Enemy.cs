@@ -6,7 +6,10 @@ using UnityEngine.AI;
 public class Enemy : MonoBehaviour
 {
     public float health = 100f;
+    public int coin = 15;
+    public float exp = 15;
     private NavMeshAgent navMeshAgent;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +22,16 @@ public class Enemy : MonoBehaviour
         if (other.GetComponent<EndPortal>() != null)
         {
             GameManager.Instance.TakeDamage();
+            Destroy(gameObject);
+        }
+    }
+
+    public void TakeDmg(float dmg)
+    {
+        health -= dmg;
+        if(health <= 0)
+        {
+            GameManager.Instance.HandleEnemyDeath(exp, coin);
             Destroy(gameObject);
         }
     }

@@ -989,7 +989,7 @@ GameObject:
   - component: {fileID: 4864886372487180441}
   - component: {fileID: 8834208854795352721}
   - component: {fileID: 5153723471782184498}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GeoDude
   m_TagString: Untagged
   m_Icon: {fileID: 0}
