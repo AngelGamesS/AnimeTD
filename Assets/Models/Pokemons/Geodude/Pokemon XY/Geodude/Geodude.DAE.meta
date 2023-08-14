@@ -3,7 +3,27 @@ guid: 9e94c139d9563334c9370585082d824d
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Body
+    second: {fileID: 2100000, guid: 4cccffe830a1e4742a0cc8eb4a74be45, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eye
+    second: {fileID: 2100000, guid: e859e0eadadf50a4bb4d315f95e0a19b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LIris
+    second: {fileID: 2100000, guid: 1b41bff10b164e14898fbf86b2b7ba28, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RIris
+    second: {fileID: 2100000, guid: 1cf9118120879cd438821f1e0ff66d95, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

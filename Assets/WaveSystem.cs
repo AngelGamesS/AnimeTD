@@ -85,6 +85,7 @@ public class WaveSystem : MonoBehaviour
             foreach (GameObject enemyPrefab in currentWaveInterval.enemies)
             {
                 GameObject enemy = Instantiate(enemyPrefab, spawnPoint.transform.position, Quaternion.identity);
+                enemy.transform.forward = spawnPoint.transform.forward;
                 enemy.transform.SetParent(spawnPoint.transform);
                 currentWaveInterval.enemiesLeft--;
 

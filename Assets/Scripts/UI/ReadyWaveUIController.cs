@@ -26,10 +26,13 @@ public class ReadyWaveUIController : MonoBehaviour
     {
         GameManager.Instance.ChangeInWave(true);
         _nextWaveBTN.SetEnabled(false);
+        _nextWaveBTN.style.opacity = 0;
     }
 
     private void HandleWaveChange(bool status)
     {
         _nextWaveBTN.SetEnabled(!status);
+        if(!status)
+            _nextWaveBTN.style.opacity = 1;
     }
 }

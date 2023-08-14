@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Rendering.Universal;
 public class ProjectileTower : MonoBehaviour
 {
     public float range;
@@ -10,6 +10,7 @@ public class ProjectileTower : MonoBehaviour
     public GameObject projectile;
     public float attackInterval;
     public float attackDmg;
+    [SerializeField] private DecalProjector _decalPrjector;
     private GameObject target;
     private float attackTimer;
     public Transform shootTransform;
@@ -18,6 +19,7 @@ public class ProjectileTower : MonoBehaviour
     void Start()
     {
         attackTimer = 0;
+        _decalPrjector.size = new Vector3(range*2,range*2, _decalPrjector.size.z);
     }
 
     private void Update()
@@ -82,5 +84,10 @@ public class ProjectileTower : MonoBehaviour
         transform.LookAt(targetPos);
     }
 
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
 
+        Gizmos.DrawWireSphere(transform.position,range);
+    }
 }

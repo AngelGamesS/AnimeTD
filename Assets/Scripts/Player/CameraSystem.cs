@@ -28,6 +28,8 @@ public class CameraSystem : MonoBehaviour
     private bool dragpanRotationActive = false;
     private Vector2 lastMousePosition;
     private Vector3 followOffset;
+    private Enemy enemyView;
+
     private void Start()
     {
         followOffset = cinemachineVirtualCamera.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset;
@@ -50,6 +52,20 @@ public class CameraSystem : MonoBehaviour
         float clampedX = Mathf.Clamp(transform.position.x, -worldBounds, worldBounds);
         float clampedZ = Mathf.Clamp(transform.position.z, -worldBounds, worldBounds);
         transform.position = new Vector3(clampedX, transform.position.y, clampedZ);
+
+
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            if ((CinemachineVirtualCamera)CinemachineCore.Instance.GetActiveBrain(0).ActiveVirtualCamera == cinemachineVirtualCamera)
+            {
+                enemyView = GameObject.FindObjectOfType<Enemy>();
+                enemyView.ChangeView(true);
+            }
+            else
+            {
+                enemyView.ChangeView(false);
+            }
+        }
 
     }
 

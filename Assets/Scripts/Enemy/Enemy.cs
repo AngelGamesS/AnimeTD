@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     public int coin = 15;
     public float exp = 15;
     public GameObject deathEffect;
+    [SerializeField] private Cinemachine.CinemachineVirtualCamera myCam; 
     private NavMeshAgent navMeshAgent;
     
     // Start is called before the first frame update
@@ -37,5 +38,13 @@ public class Enemy : MonoBehaviour
             var go = Instantiate(deathEffect, transform.position, transform.rotation);
             Destroy(go, 5f);
         }
+    }
+
+    public void ChangeView(bool enemy)
+    {
+        if (enemy)
+            myCam.Priority = 100;
+        else
+            myCam.Priority = 0;
     }
 }

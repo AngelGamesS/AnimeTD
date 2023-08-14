@@ -11,8 +11,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float _playerExp = 0;
     [SerializeField] private int _playerCoin = 0;
     public GameObject endPortal;
+
+    [SerializeField] private float MyLeveExpToLevelUp = 1000f;
     [Header("Event Channels")]
     [SerializeField] private GameEventChannelSO gameEventChannel;
+
 
     // Start is called before the first frame update
     void Awake()
@@ -35,8 +38,20 @@ public class GameManager : MonoBehaviour
     {
         _playerExp += earnExp;
         _playerCoin += earnCoin;
-        gameEventChannel.RaiseOnUpdateExpAmount(_playerExp);
+
         gameEventChannel.RaiseOnCoinAmountUpdate(_playerCoin);
+
+        if(_playerExp / MyLeveExpToLevelUp > 1)
+        {
+            _playerLevel++;
+            _playerExp = 0;
+            MyLeveExpToLevelUp = MyLeveExpToLevelUp * 1.5f + MyLeveExpToLevelUp;
+            gameEventChannel.RaiseOnLevelUp(_playerLevel);
+            gameEventChannel.RaiseOnUpdateExpAmount((_playerExp / MyLeveExpToLevelUp) * 100f);
+
+        }
+        else
+            gameEventChannel.RaiseOnUpdateExpAmount((_playerExp / MyLeveExpToLevelUp) * 100f);
     }
 
     public bool TryBuyTower(TowerDataSO selectedTower,Vector3 pos)
