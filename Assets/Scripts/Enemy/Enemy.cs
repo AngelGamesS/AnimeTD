@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     public float health = 100f;
     public int coin = 15;
     public float exp = 15;
+    public GameObject deathEffect;
     private NavMeshAgent navMeshAgent;
     
     // Start is called before the first frame update
@@ -33,6 +34,8 @@ public class Enemy : MonoBehaviour
         {
             GameManager.Instance.HandleEnemyDeath(exp, coin);
             Destroy(gameObject);
+            var go = Instantiate(deathEffect, transform.position, transform.rotation);
+            Destroy(go, 5f);
         }
     }
 }

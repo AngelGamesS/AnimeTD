@@ -1068,6 +1068,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  coin: 15
+  exp: 15
+  deathEffect: {fileID: 6461308132433443794, guid: 889f6748389784f42afe168e4e3a13f2,
+    type: 3}
 --- !u!54 &5153723471782184498
 Rigidbody:
   m_ObjectHideFlags: 0
