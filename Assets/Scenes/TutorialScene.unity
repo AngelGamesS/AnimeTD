@@ -737,6 +737,9 @@ MonoBehaviour:
   - Move The Scroll-Wheel To Zoom In And Out!
   - Press The Midle Mouse Button To Rotate!
   - Now Press On A Green Tile And Place A Pokemon!
+  - Press The Ready Button And Start The Game!
+  _currentIndex: 0
+  gameEventChannel: {fileID: 11400000, guid: f4e16f3309e8c3d4ea602ddca6072df6, type: 2}
 --- !u!1001 &430871324
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1099,6 +1102,69 @@ Transform:
   m_Father: {fileID: 102750300}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &553242732
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 553242733}
+  - component: {fileID: 553242734}
+  - component: {fileID: 553242735}
+  m_Layer: 0
+  m_Name: ReadyUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &553242733
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553242732}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1853621194}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &553242734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553242732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: 99d70a100ed3d43499f932bb174a085d, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: bcd22dd7c119f614da4ca2d3a002cf3a,
+    type: 3}
+  m_SortingOrder: 2
+--- !u!114 &553242735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553242732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c5577465f919e7449a16f690624826a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEventChannel: {fileID: 11400000, guid: f4e16f3309e8c3d4ea602ddca6072df6, type: 2}
 --- !u!4 &647251780 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8026105290589688522, guid: 8ed53cfa48b224e42a7460faf7ddf9c8,
@@ -1965,6 +2031,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1309278154}
+  - component: {fileID: 1309278155}
   m_Layer: 0
   m_Name: WaveSystem
   m_TagString: Untagged
@@ -1987,6 +2054,25 @@ Transform:
   m_Father: {fileID: 282557445}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1309278155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309278153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28836e4c40f09ef42abe7f66f4350441, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countdown: 0.1
+  spawnPoint: {fileID: 1583686578}
+  waves:
+  - {fileID: 11400000, guid: 7bbe30c98cfe5e9489fd14f1a0a60a81, type: 2}
+  - {fileID: 11400000, guid: 32ba354189dc1124393701e22ae94c33, type: 2}
+  currentWaveIntervalIndex: 0
+  gameEventChannel: {fileID: 11400000, guid: f4e16f3309e8c3d4ea602ddca6072df6, type: 2}
 --- !u!1001 &1347021838
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2795,8 +2881,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 179489558}
   - {fileID: 1804272562}
+  - {fileID: 179489558}
+  - {fileID: 553242733}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2921,6 +3008,7 @@ MonoBehaviour:
   _wavHp: 30
   _playerLevel: 1
   _playerExp: 0
+  _playerCoin: 300
   endPortal: {fileID: 528813903}
   gameEventChannel: {fileID: 11400000, guid: f4e16f3309e8c3d4ea602ddca6072df6, type: 2}
 --- !u!1 &1924837054

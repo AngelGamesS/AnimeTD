@@ -16,4 +16,6 @@ MonoBehaviour:
   description: 
   image: {fileID: 21300000, guid: 93e79b346ab1b1f468151d0f9e934e1c, type: 3}
   prefab: {fileID: 0}
-  price: 0
+  price: 200
+  minLevelRequired: 1
+  isPerchuasable: 0

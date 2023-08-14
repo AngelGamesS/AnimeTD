@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/USS/ReadyWave_USS.uss?fileID=7433441132597879392&amp;guid=3d0967a06a9a3d84ca90f369720b07a3&amp;type=3#ReadyWave_USS" />
+    <ui:VisualElement name="NextWaveBTN" style="flex-grow: 1; background-color: rgb(164, 159, 78); position: absolute; bottom: 50px; right: 50px; width: 200px; height: 50px;">
+        <ui:Label tabindex="-1" text="Ready" display-tooltip-when-elided="true" style="flex-grow: 1; color: rgb(255, 255, 255); -unity-text-align: middle-center; font-size: 18px;" />
+    </ui:VisualElement>
+</ui:UXML>

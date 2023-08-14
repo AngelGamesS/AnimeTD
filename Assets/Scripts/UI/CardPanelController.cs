@@ -44,8 +44,10 @@ public class CardPanelController : MonoBehaviour
     }
     private void HandlePickCard(TowerDataSO selectedTower)
     {
-        selectedTile.SetPlaced(true);
-        var tower = Instantiate(selectedTower.prefab, selectedTile.transform.position + Vector3.up * 0.25f, Quaternion.identity);
+        if(GameManager.Instance.TryBuyTower(selectedTower, selectedTile.transform.position + Vector3.up * 0.25f))
+        {
+            selectedTile.SetPlaced(true);
+        }
         HidePanel();
     }
     private void ShowPanel()

@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
     }
 
+    public int GetCoin() => _playerCoin;
+
     public void TakeDamage()
     {
         _wavHp--;
@@ -35,5 +37,25 @@ public class GameManager : MonoBehaviour
         _playerCoin += earnCoin;
         gameEventChannel.RaiseOnUpdateExpAmount(_playerExp);
         gameEventChannel.RaiseOnCoinAmountUpdate(_playerCoin);
+    }
+
+    public bool TryBuyTower(TowerDataSO selectedTower,Vector3 pos)
+    {
+        if(_playerCoin - selectedTower.price >= 0)
+        {
+            var tower = Instantiate(selectedTower.prefab, pos, Quaternion.identity);
+            gameEventChannel.RaiseOnTowerPlaced(selectedTower);
+           
+            _playerCoin -= selectedTower.price;
+            gameEventChannel.RaiseOnCoinAmountUpdate(_playerCoin);
+            return true;
+        }
+        return false;
+    }
+
+    public void ChangeInWave(bool status)
+    {
+        inWave = status;
+        gameEventChannel.RaiseOnGameWaveStatusChange(inWave);
     }
 }

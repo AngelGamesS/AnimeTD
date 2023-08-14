@@ -19,17 +19,20 @@ public class GameUIController : MonoBehaviour
         var root = GetComponent<UIDocument>().rootVisualElement;
         waveHealth = root.Q<Label>("Health");
         coinAmount = root.Q<Label>("Coin");
-        level = root.Q<Label>("Level");
-        levelProgressBar = root.Q<ProgressBar>("ExpProgressBar");
+        //level = root.Q<Label>("Level");
+        //levelProgressBar = root.Q<ProgressBar>("ExpProgressBar");
 
         gameEventChannel.OnCurrentWaveHpChange.AddListener(HandleWaveHealthChange);
         gameEventChannel.OnLevelUp.AddListener(HandleLevelUp);
         gameEventChannel.OnCoinAmountUpdate.AddListener(HandleCoinUpdate);
+
+        HandleCoinUpdate(GameManager.Instance.GetCoin());
     }
+
 
     private void HandleCoinUpdate(int newAmount)
     {
-        coinAmount.text = coinAmount.ToString();
+        coinAmount.text = newAmount.ToString();
     }
 
     private void HandleLevelUp(int newLevel)
