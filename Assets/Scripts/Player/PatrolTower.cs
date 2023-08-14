@@ -19,10 +19,12 @@ public class PatrolTower : MonoBehaviour
     private float _angle;
     private float _idleTimer = 0;
     private GameObject _target;
+    private Animator _animator;
 
     private void Start()
     {
         _startPos = transform.position;
+        _animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -71,6 +73,7 @@ public class PatrolTower : MonoBehaviour
 
     private void MoveToTargetAndAttack()
     {
+        _animator.CrossFade("Pidgey dive", 0.1f);
         Vector3 dir = (_target.transform.position - transform.position).normalized;
         transform.position += dir * Time.deltaTime * RotationSpeed * 6;
         transform.rotation = Quaternion.LookRotation(dir, Vector3.up);
@@ -82,11 +85,13 @@ public class PatrolTower : MonoBehaviour
 
     private void PerformAttack()
     {
+        _animator.CrossFade("Pidgey attack", 0.1f);
         _currentState = PatrolStates.GetBackToPlace;
     }
 
     private void GoToPatrol()
     {
+        _animator.CrossFade("Pidgey flying", 0.1f);
         _positionOffset.Set(
             Mathf.Cos(_angle) * CircleRadius,
             ElevationOffset,
