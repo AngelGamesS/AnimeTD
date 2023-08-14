@@ -10,4 +10,6 @@ public class TowerDataSO : ScriptableObject
     public Sprite image;
     public GameObject prefab;
     public int price;
+    public int minLevelRequired = 1;
+    public bool isPerchuasable = false;
 }

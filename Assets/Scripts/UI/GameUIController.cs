@@ -21,15 +21,22 @@ public class GameUIController : MonoBehaviour
         coinAmount = root.Q<Label>("Coin");
         level = root.Q<Label>("Level");
         levelProgressBar = root.Q<ProgressBar>("ExpProgressBar");
-
         gameEventChannel.OnCurrentWaveHpChange.AddListener(HandleWaveHealthChange);
         gameEventChannel.OnLevelUp.AddListener(HandleLevelUp);
         gameEventChannel.OnCoinAmountUpdate.AddListener(HandleCoinUpdate);
+        gameEventChannel.OnUpdateExpAmount.AddListener(HandleExpChange);
+
+        HandleCoinUpdate(GameManager.Instance.GetCoin());
+    }
+
+    private void HandleExpChange(float exp)
+    {
+        levelProgressBar.value = exp;
     }
 
     private void HandleCoinUpdate(int newAmount)
     {
-        coinAmount.text = coinAmount.ToString();
+        coinAmount.text = newAmount.ToString();
     }
 
     private void HandleLevelUp(int newLevel)
