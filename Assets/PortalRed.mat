@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PortalBlue
+  m_Name: PortalRed
   m_Shader: {fileID: 4800000, guid: b430983578466934c944e7171b4c372c, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -249,10 +249,10 @@ Material:
     - _DepthGlowColor: {r: 1, g: 1, b: 1, a: 1}
     - _FadeBurnColor: {r: 1, g: 1, b: 0, a: 1}
     - _FrontFaceTint: {r: 1, g: 1, b: 1, a: 1}
-    - _GlowColor: {r: 0.12473744, g: 1, b: 0.05098039, a: 1}
+    - _GlowColor: {r: 1, g: 0.08036237, b: 0.05098039, a: 1}
     - _LightColor: {r: 1, g: 1, b: 1, a: 1}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Shape2Color: {r: 0.7176471, g: 0.7490196, b: 0.33333334, a: 1}
+    - _Shape2Color: {r: 0.7490196, g: 0.43205905, b: 0.3333333, a: 1}
     - _Shape3Color: {r: 1, g: 1, b: 1, a: 1}
     - _ShapeColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
@@ -262,7 +262,7 @@ Texture2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: _ColorRampTexGradientTex{"mode":0,"colorKeys":[{"color":{"r":0.0,"g":0.5471698045730591,"b":0.0,"a":1.0},"time":0.0},{"color":{"r":0.402642160654068,"g":0.7641509771347046,"b":0.20545567572116853,"a":1.0},"time":0.21765469014644624},{"color":{"r":0.2631579041481018,"g":0.5,"b":0.0,"a":1.0},"time":0.4764782190322876},{"color":{"r":0.5472692251205444,"g":0.8352941274642944,"b":0.027450986206531526,"a":1.0},"time":0.7147020697593689},{"color":{"r":0.25564491748809817,"g":0.5471698045730591,"b":0.0,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":1.0}]}
+  m_Name: _ColorRampTexGradientTex{"mode":0,"colorKeys":[{"color":{"r":0.5490196347236633,"g":0.09528998285531998,"b":0.0,"a":1.0},"time":0.0},{"color":{"r":0.7647058963775635,"g":0.28404825925827029,"b":0.20392155647277833,"a":1.0},"time":0.21765469014644624},{"color":{"r":0.501960813999176,"g":0.06977237015962601,"b":0.0,"a":1.0},"time":0.4764782190322876},{"color":{"r":0.8352941274642944,"g":0.15550728142261506,"b":0.027450986206531526,"a":1.0},"time":0.7147020697593689},{"color":{"r":0.5490196347236633,"g":0.04875499755144119,"b":0.0,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":1.0}]}
   m_ImageContentsHash:
     serializedVersion: 2
     Hash: 00000000000000000000000000000000
@@ -298,7 +298,7 @@ Texture2D:
   m_ColorSpace: 0
   m_PlatformBlob: 
   image data: 256
-  _typelessdata: 008c00ff079004ff0f9408ff16980bff1e9c0fff25a013ff2da417ff34a81bff3cac1fff43b022ff4bb426ff52b82aff5abc2eff61c032ff66c233ff64be30ff62b92dff60b52aff5db127ff5bad23ff59a920ff57a51dff55a11aff529c17ff509813ff4e9410ff4c900dff4a8c0aff488806ff458403ff438000ff488500ff4d8b01ff519001ff569602ff5b9c02ff60a203ff65a703ff6aad04ff6eb304ff73b805ff78be05ff7dc406ff82c906ff87cf07ff8bd507ff88d107ff83cd06ff7fc906ff7bc505ff77c105ff73bd05ff6fb804ff6bb404ff66b004ff62ac03ff5ea803ff5aa402ff56a002ff529c02ff4e9801ff499401ff459000ff418c00ff
+  _typelessdata: 8c1800ff901c04ff941f08ff98230bff9c260fffa02a13ffa42d17ffa8311bffac341effb03822ffb43b26ffb83f2affbc422effc04631ffc24733ffbe4430ffba412dffb53d2affb13a26ffad3723ffa93320ffa5301dffa12d1aff9d2916ff992613ff952310ff911f0dff8c1c0aff881906ff841503ff801200ff861300ff8b1501ff911601ff971802ff9c1902ffa21b03ffa81c03ffad1d04ffb31f04ffb92005ffbe2205ffc42306ffca2506ffcf2607ffd52807ffd12607ffcd2506ffc92306ffc52205ffc12005ffbd1f05ffb91d04ffb51c04ffb11a04ffac1903ffa81703ffa41602ffa01402ff9c1202ff981101ff940f01ff900e00ff8c0c00ff
   m_StreamData:
     serializedVersion: 2
     offset: 0
