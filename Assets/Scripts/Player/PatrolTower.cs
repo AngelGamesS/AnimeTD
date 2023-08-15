@@ -3,28 +3,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PatrolTower : MonoBehaviour
+public class PatrolTower : Tower
 {
+    [Header("Patrol")]
     public float RotationSpeed = 1;
-    public float Dmg;
     public float CircleRadius = 1;
 
     public float ElevationOffset = 0;
-    public LayerMask layerMask;
-    public float range;
 
     [SerializeField] private PatrolStates _currentState = PatrolStates.Idle;
     private Vector3 _startPos;
     private Vector3 _positionOffset;
     private float _angle;
     private float _idleTimer = 0;
-    private GameObject _target;
-    private Animator _animator;
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         _startPos = transform.position;
-        _animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -60,7 +56,10 @@ public class PatrolTower : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(dir, Vector3.up);
         }
         else
+        {
+            GetComponent<TowerRotator>().LookAtNearestPath();
             _currentState = PatrolStates.Idle;
+        }
 
     }
 
@@ -117,7 +116,7 @@ public class PatrolTower : MonoBehaviour
     {
         _animator.CrossFade("Pidgey idle", 0.1f);
         _idleTimer += Time.deltaTime;
-        if(_idleTimer >= 3f /*&& GameManager.Instance.inWave*/)
+        if(_idleTimer >= _towerData.towerAttackInterveal && GameManager.Instance.inWave)
         {
             _idleTimer = 0;
             _currentState = PatrolStates.GoToPatrol;
@@ -144,30 +143,6 @@ public class PatrolTower : MonoBehaviour
                 FindTarget();
         }
     }
-    private void FindTarget()
-    {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, range, layerMask);
-        if (colliders.Length > 0)
-        {
-            _target = FindClosestOneEnemy(colliders).gameObject;
-        }
-    }
-
-    private Collider FindClosestOneEnemy(Collider[] colliders)
-    {
-        int selectedIndex = 0;
-        float minDistance = Mathf.Infinity;
-        for (int i = 0; i < colliders.Length; i++)
-        {
-            float tmpDistance = Vector3.Distance(transform.position, colliders[i].transform.position);
-            if (tmpDistance < minDistance)
-            {
-                selectedIndex = i;
-                minDistance = tmpDistance;
-            }
-        }
-        return colliders[selectedIndex];
-    }
 
     public enum PatrolStates
     {
@@ -184,7 +159,7 @@ public class PatrolTower : MonoBehaviour
 
         var enemy = other.GetComponent<Enemy>();
         if (enemy)
-            enemy.TakeDmg(Dmg);
+            enemy.TakeDmg(_towerData.towerDmg);
 
     }
 
@@ -194,6 +169,6 @@ public class PatrolTower : MonoBehaviour
 
         var enemy = collision.gameObject.GetComponent<Enemy>();
         if (enemy)
-            enemy.TakeDmg(Dmg);
+            enemy.TakeDmg(_towerData.towerDmg);
     }
 }

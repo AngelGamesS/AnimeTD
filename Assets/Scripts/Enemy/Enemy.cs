@@ -36,13 +36,15 @@ public class Enemy : MonoBehaviour
         if(health <= 0)
         {
             GameManager.Instance.HandleEnemyDeath(exp, coin);
-            OnDeath?.Invoke(this);
             Destroy(gameObject);
             var go = Instantiate(deathEffect, transform.position, transform.rotation);
             Destroy(go, 5f);
         }
     }
-
+    private void OnDestroy()
+    {
+        OnDeath?.Invoke(this);
+    }
     public void ChangeView(bool enemy)
     {
         if (enemy)

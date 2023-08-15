@@ -3139,6 +3139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameEventChannel: {fileID: 11400000, guid: f4e16f3309e8c3d4ea602ddca6072df6, type: 2}
+  cardsPanel: {fileID: 179489557}
 --- !u!1 &1853621193
 GameObject:
   m_ObjectHideFlags: 0
@@ -3785,14 +3786,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b98974680ec8c9459322ebebfa0d440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 1
-  Dmg: 100
-  CircleRadius: 5
-  ElevationOffset: 6
-  layerMask:
+  _towerData:
+    towerName: Pidgey
+    towerSprite: {fileID: 21300000, guid: 93e79b346ab1b1f468151d0f9e934e1c, type: 3}
+    towerDmg: 100
+    towerRange: 6
+    towerAttackInterveal: 3
+    towerDmgIncreace: 5
+    towerRangeIncreace: 1
+    towerIntervealDecreace: 0.2
+    dmgUpgradePrice: 50
+    rangeUpgradePrice: 50
+    attackIntervalUpgradePrice: 40
+    upgradesDone: 0
+  _layerMask:
     serializedVersion: 2
     m_Bits: 512
-  range: 6
+  gameEventChannel: {fileID: 11400000, guid: f4e16f3309e8c3d4ea602ddca6072df6, type: 2}
+  RotationSpeed: 1
+  CircleRadius: 5
+  ElevationOffset: 6
   _currentState: 0
 --- !u!65 &919132148501201867
 BoxCollider:

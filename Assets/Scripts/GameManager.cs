@@ -71,12 +71,17 @@ public class GameManager : MonoBehaviour
         {
             var tower = Instantiate(selectedTower.prefab, pos, Quaternion.identity);
             gameEventChannel.RaiseOnTowerPlaced(selectedTower);
-           
-            _playerCoin -= selectedTower.price;
-            gameEventChannel.RaiseOnCoinAmountUpdate(_playerCoin);
+
+            PayCoin(selectedTower.price);
             return true;
         }
         return false;
+    }
+
+    public void PayCoin(int price)
+    {
+        _playerCoin -= price;
+        gameEventChannel.RaiseOnCoinAmountUpdate(_playerCoin);
     }
 
     public void ChangeInWave(bool status)
