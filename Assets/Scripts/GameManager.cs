@@ -11,8 +11,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float _playerExp = 0;
     [SerializeField] private int _playerCoin = 0;
     public GameObject endPortal;
+
+    [SerializeField] private float MyLeveExpToLevelUp = 1000f;
     [Header("Event Channels")]
     [SerializeField] private GameEventChannelSO gameEventChannel;
+
 
     // Start is called before the first frame update
     void Awake()
@@ -22,6 +25,8 @@ public class GameManager : MonoBehaviour
         else
             Destroy(gameObject);
     }
+
+    public int GetCoin() => _playerCoin;
 
     public void TakeDamage()
     {
@@ -33,7 +38,39 @@ public class GameManager : MonoBehaviour
     {
         _playerExp += earnExp;
         _playerCoin += earnCoin;
-        gameEventChannel.RaiseOnUpdateExpAmount(_playerExp);
+
         gameEventChannel.RaiseOnCoinAmountUpdate(_playerCoin);
+
+        if(_playerExp / MyLeveExpToLevelUp > 1)
+        {
+            _playerLevel++;
+            _playerExp = 0;
+            MyLeveExpToLevelUp = MyLeveExpToLevelUp * 1.5f + MyLeveExpToLevelUp;
+            gameEventChannel.RaiseOnLevelUp(_playerLevel);
+            gameEventChannel.RaiseOnUpdateExpAmount((_playerExp / MyLeveExpToLevelUp) * 100f);
+
+        }
+        else
+            gameEventChannel.RaiseOnUpdateExpAmount((_playerExp / MyLeveExpToLevelUp) * 100f);
+    }
+
+    public bool TryBuyTower(TowerDataSO selectedTower,Vector3 pos)
+    {
+        if(_playerCoin - selectedTower.price >= 0)
+        {
+            var tower = Instantiate(selectedTower.prefab, pos, Quaternion.identity);
+            gameEventChannel.RaiseOnTowerPlaced(selectedTower);
+           
+            _playerCoin -= selectedTower.price;
+            gameEventChannel.RaiseOnCoinAmountUpdate(_playerCoin);
+            return true;
+        }
+        return false;
+    }
+
+    public void ChangeInWave(bool status)
+    {
+        inWave = status;
+        gameEventChannel.RaiseOnGameWaveStatusChange(inWave);
     }
 }

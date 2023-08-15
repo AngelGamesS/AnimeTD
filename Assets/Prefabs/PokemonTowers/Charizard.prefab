@@ -1492,6 +1492,7 @@ MonoBehaviour:
     type: 3}
   attackInterval: 3
   attackDmg: 100
+  _decalPrjector: {fileID: 2317466006862249013}
   shootTransform: {fileID: 1399093680696706140}
 --- !u!1 &5039054638219913503
 GameObject:

@@ -16,4 +16,6 @@ MonoBehaviour:
   description: Gives money every few seconds
   image: {fileID: 0}
   prefab: {fileID: 6274534639375505274, guid: 9a24e7131482a2346a0314b65698f733, type: 3}
-  price: 0
+  price: 300
+  minLevelRequired: 1
+  isPerchuasable: 0

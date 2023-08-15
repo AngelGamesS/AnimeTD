@@ -8,13 +8,19 @@ public class WaveSystem : MonoBehaviour
     public WaveSO[] waves;
     private Wave currentWave;
 
+    private int currentWaveIndex;
     public int currentWaveIntervalIndex = 0;
-    private bool readyToCountDown = true;
+    private bool readyToCountDown = false;
+    [Header("Event Channels")]
+    [SerializeField] private GameEventChannelSO gameEventChannel;
+
 
     private void Start()
     {
-        currentWave = waves[0].wave;
+        currentWaveIndex = 0;
+        currentWave = waves[currentWaveIndex].wave;
         InitializeWaveIntervals();
+        gameEventChannel.OnGameWaveStatusChange.AddListener(UpdateInWave);
     }
 
     private void Update()
@@ -49,9 +55,16 @@ public class WaveSystem : MonoBehaviour
             else
             {
                 countdown = Mathf.Infinity;
+                currentWaveIndex++;
+                Invoke("WaveFinished", 5f);
             }
 
         }
+    }
+
+    private void WaveFinished()
+    {
+        gameEventChannel.RaiseOnGameWaveStatusChange(false);
     }
 
     private void InitializeWaveIntervals()
@@ -72,11 +85,24 @@ public class WaveSystem : MonoBehaviour
             foreach (GameObject enemyPrefab in currentWaveInterval.enemies)
             {
                 GameObject enemy = Instantiate(enemyPrefab, spawnPoint.transform.position, Quaternion.identity);
+                enemy.transform.forward = spawnPoint.transform.forward;
                 enemy.transform.SetParent(spawnPoint.transform);
                 currentWaveInterval.enemiesLeft--;
 
                 yield return new WaitForSeconds(currentWaveInterval.timeToNextEnemy);
             }
+        }
+    }
+
+    public void UpdateInWave(bool inWave)
+    {
+        readyToCountDown = inWave;
+        if(inWave)
+        {
+            currentWave = waves[currentWaveIndex].wave;
+            InitializeWaveIntervals();
+            countdown = 0;
+            currentWaveIntervalIndex = 0;
         }
     }
 }

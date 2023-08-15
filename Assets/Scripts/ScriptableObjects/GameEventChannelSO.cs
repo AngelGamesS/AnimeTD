@@ -8,12 +8,16 @@ using System;
 public class GameEventChannelSO : ScriptableObject
 {
     public UnityEvent<bool> OnWinLose;
+    public UnityEvent<TowerDataSO> OnTowerPlaced;
+    public UnityEvent<bool> OnGameWaveStatusChange;
     public UnityEvent<int> OnCurrentWaveHpChange;
     public UnityEvent<int> OnCoinAmountUpdate;
     public UnityEvent<int> OnLevelUp;
     public UnityEvent<float> OnUpdateExpAmount;
 
     public void RaiseOnWinLose(bool status) => OnWinLose?.Invoke(status);
+    public void RaiseOnTowerPlaced(TowerDataSO tower) => OnTowerPlaced?.Invoke(tower);
+    public void RaiseOnGameWaveStatusChange(bool status) => OnGameWaveStatusChange?.Invoke(status);
     public void RaiseOnCurrentWaveHpChange(int cuurentAmount) => OnCurrentWaveHpChange?.Invoke(cuurentAmount);
     public void RaiseOnCoinAmountUpdate(int coins) => OnCoinAmountUpdate?.Invoke(coins);
 
