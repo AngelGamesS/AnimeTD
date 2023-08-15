@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public bool inWave = false;
+    public GameObject WinUI;
     [SerializeField] private int _wavHp = 20;
     [SerializeField] private int _playerLevel = 1;
     [SerializeField] private float _playerExp = 0;
@@ -24,6 +26,15 @@ public class GameManager : MonoBehaviour
             Instance = this;
         else
             Destroy(gameObject);
+        gameEventChannel.OnWinLose.AddListener(HandleWinLose);
+    }
+
+    private void HandleWinLose(bool status)
+    {
+        if (status)
+        {
+            WinUI.SetActive(true);
+        }
     }
 
     public int GetCoin() => _playerCoin;
@@ -71,6 +82,7 @@ public class GameManager : MonoBehaviour
     public void ChangeInWave(bool status)
     {
         inWave = status;
-        gameEventChannel.RaiseOnGameWaveStatusChange(inWave);
+        //Not Changing Wave Index
+        gameEventChannel.RaiseOnGameWaveStatusChange(inWave,-1);
     }
 }

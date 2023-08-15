@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,6 +20,17 @@ public class ReadyWaveUIController : MonoBehaviour
         _nextWaveBTN.AddManipulator(new Clickable(evt => NextWaveBTN_onClick()));
 
         gameEventChannel.OnGameWaveStatusChange.AddListener(HandleWaveChange);
+        gameEventChannel.OnWinLose.AddListener(HandleWinLose);
+
+    }
+
+    private void HandleWinLose(bool status)
+    {
+        if (status)
+        {
+            _nextWaveBTN.SetEnabled(false);
+            _nextWaveBTN.style.opacity = 0;
+        }
 
     }
 
@@ -29,7 +41,7 @@ public class ReadyWaveUIController : MonoBehaviour
         _nextWaveBTN.style.opacity = 0;
     }
 
-    private void HandleWaveChange(bool status)
+    private void HandleWaveChange(bool status,int waveIndex)
     {
         _nextWaveBTN.SetEnabled(!status);
         if(!status)

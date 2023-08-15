@@ -31,7 +31,7 @@ public class TutorialCanvasHandler : MonoBehaviour
         gameEventChannel.OnGameWaveStatusChange.AddListener(HandleWaveChange);
     }
 
-    private void HandleWaveChange(bool status)
+    private void HandleWaveChange(bool status,int waveIndex)
     {
         if (status)
             MoveToNextSentence();

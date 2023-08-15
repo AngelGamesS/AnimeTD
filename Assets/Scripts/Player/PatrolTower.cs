@@ -6,7 +6,7 @@ using UnityEngine;
 public class PatrolTower : MonoBehaviour
 {
     public float RotationSpeed = 1;
-
+    public float Dmg;
     public float CircleRadius = 1;
 
     public float ElevationOffset = 0;
@@ -52,6 +52,7 @@ public class PatrolTower : MonoBehaviour
 
     private void MoveBackToStartPos()
     {
+        _animator.CrossFade("Pidgey flying",0.1f);
         if (Vector3.Distance(transform.position, _startPos) > 0.1f)
         {
             Vector3 dir = (_startPos - transform.position).normalized;
@@ -75,7 +76,7 @@ public class PatrolTower : MonoBehaviour
     {
         _animator.CrossFade("Pidgey dive", 0.1f);
         Vector3 dir = (_target.transform.position - transform.position).normalized;
-        transform.position += dir * Time.deltaTime * RotationSpeed * 6;
+        transform.position += dir * Time.deltaTime * RotationSpeed * 10;
         transform.rotation = Quaternion.LookRotation(dir, Vector3.up);
         if(Vector3.Distance(transform.position, _target.transform.position) < 0.2f)
         {
@@ -85,13 +86,19 @@ public class PatrolTower : MonoBehaviour
 
     private void PerformAttack()
     {
-        _animator.CrossFade("Pidgey attack", 0.1f);
+        _animator.Play("Pidgey attack");
+
+        Invoke("InvokedGetBackToPlace", 0.2f);
+    }
+
+    private void InvokedGetBackToPlace()
+    {
         _currentState = PatrolStates.GetBackToPlace;
     }
 
     private void GoToPatrol()
     {
-        _animator.CrossFade("Pidgey flying", 0.1f);
+        _animator.Play("Pidgey flying");
         _positionOffset.Set(
             Mathf.Cos(_angle) * CircleRadius,
             ElevationOffset,
@@ -108,6 +115,7 @@ public class PatrolTower : MonoBehaviour
 
     private void PerformIdle()
     {
+        _animator.CrossFade("Pidgey idle", 0.1f);
         _idleTimer += Time.deltaTime;
         if(_idleTimer >= 3f /*&& GameManager.Instance.inWave*/)
         {
@@ -168,5 +176,24 @@ public class PatrolTower : MonoBehaviour
         Patrol,
         Attack,
         GetBackToPlace
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (_currentState != PatrolStates.Attack) return;
+
+        var enemy = other.GetComponent<Enemy>();
+        if (enemy)
+            enemy.TakeDmg(Dmg);
+
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (_currentState != PatrolStates.Attack) return;
+
+        var enemy = collision.gameObject.GetComponent<Enemy>();
+        if (enemy)
+            enemy.TakeDmg(Dmg);
     }
 }
