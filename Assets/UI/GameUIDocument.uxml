@@ -11,5 +11,6 @@
             <ui:Label tabindex="-1" text="Level 1" display-tooltip-when-elided="true" name="Level" style="-unity-text-outline-color: rgb(0, 0, 0); font-size: 48px; color: rgb(255, 255, 255); -unity-text-outline-width: 0;" />
             <ui:ProgressBar value="0" name="ExpProgressBar" style="padding-left: 1px; padding-right: 2px; padding-top: 4px; padding-bottom: 4px; margin-bottom: 0; max-width: 400px; min-width: 400px; -unity-background-image-tint-color: rgb(255, 255, 255); background-color: rgba(161, 0, 0, 0);" />
         </ui:VisualElement>
+        <ui:Label tabindex="-1" text="Wave 1" display-tooltip-when-elided="true" name="WaveNumber" style="color: rgb(255, 255, 255); font-size: 82px; -unity-text-align: upper-center; top: auto; opacity: 0;" />
     </ui:VisualElement>
 </ui:UXML>

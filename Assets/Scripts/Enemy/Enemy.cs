@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using System;
 
 public class Enemy : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Enemy : MonoBehaviour
     public GameObject deathEffect;
     [SerializeField] private Cinemachine.CinemachineVirtualCamera myCam; 
     private NavMeshAgent navMeshAgent;
+    public Action<Enemy> OnDeath;
     
     // Start is called before the first frame update
     void Start()
@@ -34,6 +36,7 @@ public class Enemy : MonoBehaviour
         if(health <= 0)
         {
             GameManager.Instance.HandleEnemyDeath(exp, coin);
+            OnDeath?.Invoke(this);
             Destroy(gameObject);
             var go = Instantiate(deathEffect, transform.position, transform.rotation);
             Destroy(go, 5f);

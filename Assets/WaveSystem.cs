@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class WaveSystem : MonoBehaviour
@@ -11,8 +13,10 @@ public class WaveSystem : MonoBehaviour
     private int currentWaveIndex;
     public int currentWaveIntervalIndex = 0;
     private bool readyToCountDown = false;
+    private List<Enemy> _enemyWave = new List<Enemy>();
     [Header("Event Channels")]
     [SerializeField] private GameEventChannelSO gameEventChannel;
+    private bool _spawningWave = false;
 
 
     private void Start()
@@ -56,7 +60,6 @@ public class WaveSystem : MonoBehaviour
             {
                 countdown = Mathf.Infinity;
                 currentWaveIndex++;
-                Invoke("WaveFinished", 5f);
             }
 
         }
@@ -64,7 +67,10 @@ public class WaveSystem : MonoBehaviour
 
     private void WaveFinished()
     {
-        gameEventChannel.RaiseOnGameWaveStatusChange(false);
+        if(currentWaveIndex > waves.Length - 1)
+            gameEventChannel.RaiseOnWinLose(true);
+        else
+            gameEventChannel.RaiseOnGameWaveStatusChange(false,currentWaveIndex + 1);
     }
 
     private void InitializeWaveIntervals()
@@ -78,23 +84,44 @@ public class WaveSystem : MonoBehaviour
 
     private IEnumerator SpawnWave()
     {
+        _spawningWave = true;
         if (currentWaveIntervalIndex < currentWave.waveIntervals.Length)
         {
             WaveInterval currentWaveInterval = currentWave.waveIntervals[currentWaveIntervalIndex];
 
             foreach (GameObject enemyPrefab in currentWaveInterval.enemies)
             {
-                GameObject enemy = Instantiate(enemyPrefab, spawnPoint.transform.position, Quaternion.identity);
-                enemy.transform.forward = spawnPoint.transform.forward;
-                enemy.transform.SetParent(spawnPoint.transform);
+                GameObject enemyObj = Instantiate(enemyPrefab, spawnPoint.transform.position, Quaternion.identity);
+                enemyObj.transform.forward = spawnPoint.transform.forward;
+                enemyObj.transform.SetParent(spawnPoint.transform);
+
+                Enemy enemy = enemyObj.GetComponent<Enemy>();
+                if(enemy != null)
+                {
+                    _enemyWave.Add(enemy);
+                    enemy.OnDeath += HandleEnemyDeath;
+                }
+                
+                
                 currentWaveInterval.enemiesLeft--;
 
                 yield return new WaitForSeconds(currentWaveInterval.timeToNextEnemy);
             }
         }
+        _spawningWave = false;
     }
 
-    public void UpdateInWave(bool inWave)
+    private void HandleEnemyDeath(Enemy enemy)
+    {
+        _enemyWave.Remove(enemy);
+        _enemyWave.RemoveAll(en => en == null);
+        if (_enemyWave.Count == 0 && countdown == Mathf.Infinity && !readyToCountDown && !_spawningWave)
+        {
+            WaveFinished();
+        }
+    }
+
+    public void UpdateInWave(bool inWave, int waveIndex)
     {
         readyToCountDown = inWave;
         if(inWave)
