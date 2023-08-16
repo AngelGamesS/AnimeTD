@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public bool inWave = false;
+    public SaveSystem saveSystem;
     public GameObject WinUI;
     [SerializeField] private int _wavHp = 20;
     [SerializeField] private int _playerLevel = 1;
@@ -26,7 +27,23 @@ public class GameManager : MonoBehaviour
             Instance = this;
         else
             Destroy(gameObject);
+
         gameEventChannel.OnWinLose.AddListener(HandleWinLose);
+
+        var data = saveSystem.LoadFromJson();
+        if(data != null)
+        {
+            _playerExp = data.playerExp;
+            _playerLevel = data.playerLevel;
+
+            Invoke("InvokedUpdatePlayerData", 0.1f);
+        }
+    }
+
+    private void InvokedUpdatePlayerData()
+    {
+        gameEventChannel.RaiseOnLevelUp(_playerLevel);
+        gameEventChannel.RaiseOnUpdateExpAmount((_playerExp / MyLeveExpToLevelUp) * 100f);
     }
 
     private void HandleWinLose(bool status)
@@ -34,6 +51,7 @@ public class GameManager : MonoBehaviour
         if (status)
         {
             WinUI.SetActive(true);
+            saveSystem.SaveIntoJson(_playerExp,_playerLevel);
         }
     }
 
