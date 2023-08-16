@@ -13,7 +13,7 @@ public class TowerRotator : MonoBehaviour
         LookAtNearestPath();
     }
 
-    private void LookAtNearestPath()
+    public void LookAtNearestPath()
     {
         var tiles = Physics.OverlapSphere(transform.position, 5f, tileMask);
         TileComponent closestTile = GetClosestPathTile(tiles);

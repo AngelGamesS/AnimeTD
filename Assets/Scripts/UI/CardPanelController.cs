@@ -11,6 +11,7 @@ public class CardPanelController : MonoBehaviour
     private TowerDataSO[] towers;
     private TileComponent selectedTile = null;
     ScrollView sv;
+    private VisualElement closeBTN;
     private void Awake()
     {
         if (Instance == null)
@@ -23,6 +24,8 @@ public class CardPanelController : MonoBehaviour
         var root = GetComponent<UIDocument>().rootVisualElement;
         sv = root.Q<ScrollView>("ScrollView");
         towers = Resources.LoadAll<TowerDataSO>(towersPath);
+        closeBTN = root.Q<VisualElement>("CloseBTN");
+        closeBTN.AddManipulator(new Clickable(evt => HidePanel()));
         AddTowersToScrollView();
     }
     private void AddTowersToScrollView()
@@ -39,24 +42,34 @@ public class CardPanelController : MonoBehaviour
     }
     public void ChooseTower(TileComponent tile)
     {
-        selectedTile = tile;
-        ShowPanel();
+        if(selectedTile == null)
+        {
+            selectedTile = tile;
+            ShowPanel();
+        }
     }
     private void HandlePickCard(TowerDataSO selectedTower)
     {
         if(GameManager.Instance.TryBuyTower(selectedTower, selectedTile.transform.position + Vector3.up * 0.25f))
         {
             selectedTile.SetPlaced(true);
+            selectedTile = null;
         }
         HidePanel();
     }
     private void ShowPanel()
     {
+        closeBTN.SetEnabled(true);
+        closeBTN.style.visibility = Visibility.Visible;
         sv.AddToClassList("moveUp");
     }
 
     private void HidePanel()
     {
+        selectedTile = null;
+
+        closeBTN.SetEnabled(false);
+        closeBTN.style.visibility = Visibility.Hidden;
         sv.RemoveFromClassList("moveUp");
     }
 }

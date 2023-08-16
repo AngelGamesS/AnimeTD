@@ -18,4 +18,4 @@ MonoBehaviour:
   prefab: {fileID: 6274534639375505274, guid: 9a24e7131482a2346a0314b65698f733, type: 3}
   price: 300
   minLevelRequired: 1
-  isPerchuasable: 0
+  isPerchuasable: 1

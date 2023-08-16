@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4e701ca16382434fbceeb401513e021, type: 3}
+  m_Name: Wave1
+  m_EditorClassIdentifier: 
+  wave:
+    waveIntervals:
+    - enemies:
+      - {fileID: 4513815490189685681, guid: 3ea0fcfcbcf60bd4cadf082178e043ca, type: 3}
+      - {fileID: 4513815490189685681, guid: 3ea0fcfcbcf60bd4cadf082178e043ca, type: 3}
+      - {fileID: 4513815490189685681, guid: 3ea0fcfcbcf60bd4cadf082178e043ca, type: 3}
+      timeToNextEnemy: 1
+      timeToNextWaveInterval: 5
+      enemiesLeft: 2
+    - enemies:
+      - {fileID: 4513815490189685681, guid: 3ea0fcfcbcf60bd4cadf082178e043ca, type: 3}
+      - {fileID: 4513815490189685681, guid: 3ea0fcfcbcf60bd4cadf082178e043ca, type: 3}
+      - {fileID: 4513815490189685681, guid: 3ea0fcfcbcf60bd4cadf082178e043ca, type: 3}
+      - {fileID: 4513815490189685681, guid: 3ea0fcfcbcf60bd4cadf082178e043ca, type: 3}
+      - {fileID: 4513815490189685681, guid: 3ea0fcfcbcf60bd4cadf082178e043ca, type: 3}
+      - {fileID: 4513815490189685681, guid: 3ea0fcfcbcf60bd4cadf082178e043ca, type: 3}
+      - {fileID: 4513815490189685681, guid: 3ea0fcfcbcf60bd4cadf082178e043ca, type: 3}
+      timeToNextEnemy: 1
+      timeToNextWaveInterval: 10
+      enemiesLeft: 3
+    - enemies:
+      - {fileID: 8831324749294507782, guid: 812d077fdf0e7a1409f62bb9d33dd10b, type: 3}
+      - {fileID: 8831324749294507782, guid: 812d077fdf0e7a1409f62bb9d33dd10b, type: 3}
+      timeToNextEnemy: 5
+      timeToNextWaveInterval: Infinity
+      enemiesLeft: 3
