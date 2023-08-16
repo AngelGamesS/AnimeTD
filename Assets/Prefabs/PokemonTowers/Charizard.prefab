@@ -1388,7 +1388,7 @@ GameObject:
   - component: {fileID: 4924564914884061317}
   - component: {fileID: 1023676469822957029}
   - component: {fileID: 4782790159562464706}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Charizard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1484,14 +1484,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daacd2fb073cb584398b1dc77d1b6e83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 15
-  layerMask:
+  _towerData:
+    towerName: Charizard
+    towerSprite: {fileID: 21300000, guid: 5a8f8bdb61b246a44b9a115df83005c7, type: 3}
+    towerDmg: 150
+    towerRange: 15
+    towerAttackInterveal: 3
+    towerDmgIncreace: 5
+    towerRangeIncreace: 1
+    towerIntervealDecreace: 0.3
+    dmgUpgradePrice: 50
+    rangeUpgradePrice: 50
+    attackIntervalUpgradePrice: 50
+    upgradesDone: 0
+  _layerMask:
     serializedVersion: 2
     m_Bits: 512
+  gameEventChannel: {fileID: 11400000, guid: f4e16f3309e8c3d4ea602ddca6072df6, type: 2}
   projectile: {fileID: 7493796544200936264, guid: 625a5893477f7b94da52aa0c2e1eb1d8,
     type: 3}
-  attackInterval: 3
-  attackDmg: 100
   _decalPrjector: {fileID: 2317466006862249013}
   shootTransform: {fileID: 1399093680696706140}
 --- !u!1 &5039054638219913503

@@ -63,6 +63,9 @@ public class GameUIController : MonoBehaviour
         gameEventChannel.OnTowerSelected.AddListener(HandleTowerSelected);
 
         HandleCoinUpdate(GameManager.Instance.GetCoin());
+        HandleWaveHealthChange(GameManager.Instance.GetHP());
+        HandleExpChange(GameManager.Instance.GetExp());
+        HandleLevelUp(GameManager.Instance.GetLevel());
     }
 
     private void CloseSelectedPanel()

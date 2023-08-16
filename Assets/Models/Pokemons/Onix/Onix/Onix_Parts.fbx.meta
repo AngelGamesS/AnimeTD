@@ -1,49 +1,9 @@
 fileFormatVersion: 2
-guid: ab31a2b87ffa6454182cb18370a288b3
+guid: 776180801ff335b4d8cd4c16a3ce329b
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: BodyAVco00_mat
-    second: {fileID: 2100000, guid: f768836f5dc2f0e4c94766b45e096330, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: BodyAVco01_mat
-    second: {fileID: 2100000, guid: 502dfae8eec1d4b44ba44afcb09c9a63, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: BodyB00_mat
-    second: {fileID: 2100000, guid: 5a877fbf88337294d8484decfc4a4fe2, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: BodyB01_mat
-    second: {fileID: 2100000, guid: 7575e34031e2598419a7350a69a9db63, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: BodyC_mat
-    second: {fileID: 2100000, guid: c27544787ca614d4b9a2861578450263, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Eye_mat
-    second: {fileID: 2100000, guid: 709d7a9510ddcd44490fba72107d8f02, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: LIris_mat
-    second: {fileID: 2100000, guid: b0a82da847186684d976a4c1675fa795, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: RIris_mat
-    second: {fileID: 2100000, guid: b633dcf3e127b9b4da2835abfd94f942, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

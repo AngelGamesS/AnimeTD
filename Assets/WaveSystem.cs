@@ -93,7 +93,7 @@ public class WaveSystem : MonoBehaviour
             {
                 GameObject enemyObj = Instantiate(enemyPrefab, spawnPoint.transform.position, Quaternion.identity);
                 enemyObj.transform.forward = spawnPoint.transform.forward;
-                enemyObj.transform.SetParent(spawnPoint.transform);
+                //enemyObj.transform.SetParent(spawnPoint.transform);
 
                 Enemy enemy = enemyObj.GetComponent<Enemy>();
                 if(enemy != null)

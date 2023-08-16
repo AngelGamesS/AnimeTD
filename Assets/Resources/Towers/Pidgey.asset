@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3825fa27942a2224dadee68e9e97f810, type: 3}
-  m_Name: ToriTower
+  m_Name: Pidgey
   m_EditorClassIdentifier: 
-  towerName: Tori Tower
-  description: Gives money every few seconds
-  image: {fileID: 0}
-  prefab: {fileID: 6274534639375505274, guid: 9a24e7131482a2346a0314b65698f733, type: 3}
-  price: 300
+  towerName: Pidgey
+  description: Patroling and killing!
+  image: {fileID: 21300000, guid: deefcdf17c97ac04dba64790fb2ace4f, type: 3}
+  prefab: {fileID: 8405732340071121871, guid: 27ef3d026176b8244a292b9afbd3241b, type: 3}
+  price: 150
   minLevelRequired: 1
   isPerchuasable: 1

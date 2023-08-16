@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3825fa27942a2224dadee68e9e97f810, type: 3}
-  m_Name: Pikachu
+  m_Name: Diglett
   m_EditorClassIdentifier: 
-  towerName: Pikachu
-  description: 
-  image: {fileID: 21300000, guid: 93e79b346ab1b1f468151d0f9e934e1c, type: 3}
-  prefab: {fileID: 0}
-  price: 200
+  towerName: Diglett
+  description: Dig You enemies grave!
+  image: {fileID: 21300000, guid: 00f6626af2c7ec3479e1e58f405d9ef4, type: 3}
+  prefab: {fileID: 2985825462077607564, guid: 9e208684457f6794896f2a061d50b10a, type: 3}
+  price: 250
   minLevelRequired: 1
-  isPerchuasable: 0
+  isPerchuasable: 1
