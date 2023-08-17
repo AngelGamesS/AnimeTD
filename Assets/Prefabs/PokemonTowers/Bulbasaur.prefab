@@ -909,7 +909,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _towerData:
     towerName: Bulbasaur
-    towerSprite: {fileID: 21300000, guid: 5a8f8bdb61b246a44b9a115df83005c7, type: 3}
+    towerSprite: {fileID: 21300000, guid: cb866165ad679e34d90e0788f0c10f38, type: 3}
     towerDmg: 100
     towerRange: 9
     towerAttackInterveal: 3
