@@ -16,7 +16,13 @@ public class ProjectileTower : Tower
     {
         base.Start();
         attackTimer = 0;
-        _decalPrjector.size = new Vector3(_towerData.towerRange*2, _towerData.towerRange * 2, _decalPrjector.size.z);
+        HandleRangeIncrease();
+        OnRangeUpdate += HandleRangeIncrease;
+    }
+
+    private void HandleRangeIncrease()
+    {
+        _decalPrjector.size = new Vector3(_towerData.towerRange * 2, _towerData.towerRange * 2, _decalPrjector.size.z);
     }
 
     private void Update()

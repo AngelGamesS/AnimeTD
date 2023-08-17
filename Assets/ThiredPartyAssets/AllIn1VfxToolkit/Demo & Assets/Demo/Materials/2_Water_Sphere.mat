@@ -6,7 +6,7 @@ Texture2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: _ColorRampTexGradientTex{"mode":0,"colorKeys":[{"color":{"r":0.10030261427164078,"g":0.17297935485839845,"b":0.9245283007621765,"a":1.0},"time":0.0},{"color":{"r":0.2216981053352356,"g":1.0,"b":0.9710115790367127,"a":1.0},"time":0.6324254274368286},{"color":{"r":0.8207547068595886,"g":1.0,"b":0.978492796421051,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":1.0}]}
+  m_Name: _ColorRampTexGradientTex{"mode":0,"colorKeys":[{"color":{"r":0.10030261427164078,"g":0.17297935485839845,"b":0.9245283007621765,"a":1.0},"time":0.0},{"color":{"r":0.08957815170288086,"g":0.5754716992378235,"b":0.5582935810089111,"a":1.0},"time":0.6324254274368286},{"color":{"r":0.8207547068595886,"g":1.0,"b":0.978492796421051,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":1.0}]}
   m_ImageContentsHash:
     serializedVersion: 2
     Hash: 00000000000000000000000000000000
@@ -42,7 +42,7 @@ Texture2D:
   m_ColorSpace: 0
   m_PlatformBlob: 
   image data: 256
-  _typelessdata: 1a2cecff1a31ecff1b37ecff1c3cedff1d41edff1d47edff1e4ceeff1f51eeff2056eeff215ceeff2161efff2266efff236cefff2471f0ff2476f0ff257cf0ff2681f1ff2786f1ff288bf1ff2891f1ff2996f2ff2a9bf2ff2ba1f2ff2ba6f3ff2cabf3ff2db0f3ff2eb6f3ff2fbbf4ff2fc0f4ff30c6f4ff31cbf5ff32d0f5ff32d5f5ff33dbf6ff34e0f6ff35e5f6ff36ebf6ff36f0f7ff37f5f7ff38fbf7ff3afff8ff40fff8ff47fff8ff4dfff8ff54fff8ff5bfff8ff61fff8ff68fff8ff6efff8ff75fff8ff7cfff8ff82fff9ff89fff9ff8ffff9ff96fff9ff9dfff9ffa3fff9ffaafff9ffb0fff9ffb7fff9ffbefff9ffc4fff9ffcbfff9ffd1fffaff
+  _typelessdata: 1a2cecff1a2fe9ff1931e7ff1934e5ff1936e2ff1939e0ff193cdeff193edbff1941d9ff1943d7ff1946d4ff1948d2ff194bd0ff194ecdff1950cbff1953c9ff1855c6ff1858c4ff185ac2ff185dbfff1860bdff1862bbff1865b8ff1867b6ff186ab3ff186db1ff186fafff1872acff1874aaff1877a8ff1879a5ff177ca3ff177fa1ff17819eff17849cff17869aff178997ff178b95ff178e93ff179190ff18938fff209894ff289d98ff30a29dff38a6a2ff40aba6ff48b0abff50b4afff59b9b4ff61beb9ff69c2bdff71c7c2ff79ccc7ff81d0cbff89d5d0ff91dad4ff99ded9ffa1e3deffa9e8e2ffb1ece7ffb9f1ecffc1f6f0ffc9faf5ffd1fffaff
   m_StreamData:
     serializedVersion: 2
     offset: 0

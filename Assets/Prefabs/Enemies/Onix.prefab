@@ -1644,9 +1644,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed3e681405feff4aa1048adf90baed8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 500
-  coin: 50
-  exp: 45
+  health: 800
+  coin: 70
+  exp: 50
   deathEffect: {fileID: 1299425371591257294, guid: ad4f385f8cbfb2b4eb702a0b52976268,
     type: 3}
   myCam: {fileID: 191093086597754521}

@@ -26,23 +26,27 @@ public class CardPanelController : MonoBehaviour
         towers = Resources.LoadAll<TowerDataSO>(towersPath);
         closeBTN = root.Q<VisualElement>("CloseBTN");
         closeBTN.AddManipulator(new Clickable(evt => HidePanel()));
-        AddTowersToScrollView();
+        //AddTowersToScrollView();
     }
     private void AddTowersToScrollView()
     {
+        sv.Clear();
         foreach (var tower in towers)
         {
-            var towerCard = cardAsset.Instantiate();
-            towerCard.Q<Label>("Title").text = $"Tower Name: {tower.towerName}";
-            towerCard.Q<VisualElement>("Image").style.backgroundImage = new StyleBackground(tower.image);
-            towerCard.Q<Label>("Price").text = $"Price: {tower.price}";
-            towerCard.Q<VisualElement>("Container").AddManipulator(new Clickable(evt => HandlePickCard(tower)));
-            sv.Add(towerCard);
+            if (tower.isPerchuasable && tower.minLevelRequired <= GameManager.Instance.GetLevel())
+            {
+                var towerCard = cardAsset.Instantiate();
+                towerCard.Q<Label>("Title").text = $"{tower.towerName}";
+                towerCard.Q<VisualElement>("Image").style.backgroundImage = new StyleBackground(tower.image);
+                towerCard.Q<Label>("Price").text = $"Price: {tower.price}";
+                towerCard.Q<VisualElement>("Container").AddManipulator(new Clickable(evt => HandlePickCard(tower)));
+                sv.Add(towerCard);
+            }
         }
     }
     public void ChooseTower(TileComponent tile)
     {
-        if(selectedTile == null)
+        if(selectedTile == null && gameObject.activeSelf)
         {
             selectedTile = tile;
             ShowPanel();
@@ -61,6 +65,7 @@ public class CardPanelController : MonoBehaviour
     {
         closeBTN.SetEnabled(true);
         closeBTN.style.visibility = Visibility.Visible;
+        AddTowersToScrollView();
         sv.AddToClassList("moveUp");
     }
 
