@@ -6941,7 +6941,7 @@ MonoBehaviour:
   saveSystem: {fileID: 573400501}
   WinUI: {fileID: 592707868}
   _wavHp: 50
-  _playerLevel: 1
+  _playerLevel: 2
   _playerExp: 0
   _playerCoin: 10000
   endPortal: {fileID: 528813903}

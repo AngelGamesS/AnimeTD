@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerName: Bulbasaur
   description: Starter grass pokemon
-  image: {fileID: 21300000, guid: 5a8f8bdb61b246a44b9a115df83005c7, type: 3}
+  image: {fileID: 21300000, guid: cb866165ad679e34d90e0788f0c10f38, type: 3}
   prefab: {fileID: 3964605086687238858, guid: 27e12ee2322a69f408e1923293f8218d, type: 3}
   price: 200
   minLevelRequired: 1

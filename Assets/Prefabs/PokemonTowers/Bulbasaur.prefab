@@ -926,8 +926,9 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 512
-  evolution: {fileID: 0}
-  evolutionMat: {fileID: 0}
+  evolution: {fileID: 1236954143819759698, guid: 00cf388762edc894db33ec8264ccf831,
+    type: 3}
+  evolutionMat: {fileID: 2100000, guid: af17a462f262722408b86e96ae28b999, type: 2}
   gameEventChannel: {fileID: 11400000, guid: f4e16f3309e8c3d4ea602ddca6072df6, type: 2}
   projectile: {fileID: 7106652715701454102, guid: bc2babdd05992d845bc0a0d4e14be44b,
     type: 3}

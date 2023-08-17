@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f6f31ee459ffa6468ed659b52ba8d84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 15
 --- !u!135 &5243861131434245211
 SphereCollider:
   m_ObjectHideFlags: 0

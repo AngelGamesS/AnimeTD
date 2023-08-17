@@ -733,6 +733,7 @@ Transform:
   - {fileID: 1885563136}
   - {fileID: 1309278154}
   - {fileID: 333876366}
+  - {fileID: 2131471668}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3309,13 +3310,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inWave: 0
+  saveSystem: {fileID: 2131471669}
   WinUI: {fileID: 1754674115}
   _wavHp: 30
   _playerLevel: 1
   _playerExp: 0
-  _playerCoin: 300
+  _playerCoin: 500
   endPortal: {fileID: 528813903}
-  MyLeveExpToLevelUp: 300
+  _myLevelExpToLevelUp: 300
   gameEventChannel: {fileID: 11400000, guid: f4e16f3309e8c3d4ea602ddca6072df6, type: 2}
 --- !u!1 &1924837054
 GameObject:
@@ -3439,6 +3441,50 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ed53cfa48b224e42a7460faf7ddf9c8, type: 3}
+--- !u!1 &2131471667
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2131471668}
+  - component: {fileID: 2131471669}
+  m_Layer: 0
+  m_Name: SaveSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2131471668
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131471667}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 282557445}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2131471669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131471667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72c236cba66290c4f9e8b092ed71872c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1872635463657018042
 PrefabInstance:
   m_ObjectHideFlags: 0
