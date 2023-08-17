@@ -3315,9 +3315,9 @@ MonoBehaviour:
   _wavHp: 30
   _playerLevel: 1
   _playerExp: 0
-  _playerCoin: 300
+  _playerCoin: 500
   endPortal: {fileID: 528813903}
-  _myLevelExpToLevelUp: 1000
+  _myLevelExpToLevelUp: 300
   gameEventChannel: {fileID: 11400000, guid: f4e16f3309e8c3d4ea602ddca6072df6, type: 2}
 --- !u!1 &1924837054
 GameObject:

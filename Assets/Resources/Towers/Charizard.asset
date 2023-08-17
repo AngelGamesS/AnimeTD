@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerName: Charizard
   description: Best Fire Pokemon EVER!!!
-  image: {fileID: 21300000, guid: 5a8f8bdb61b246a44b9a115df83005c7, type: 3}
+  image: {fileID: 21300000, guid: aaa998f948a043d4ea46abfb20d6317e, type: 3}
   prefab: {fileID: 4827718491969122625, guid: 1575b05f386c546409f35e67d692152a, type: 3}
   price: 200
   minLevelRequired: 1

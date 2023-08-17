@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerName: Pikachu Ball Tower
   description: Gives dmg to near by towers
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 44a9387da644bb846b608df7f149ce7d, type: 3}
   prefab: {fileID: 4027296933762212126, guid: 141209465beb8374a8ddb53f4c6d72e9, type: 3}
   price: 300
   minLevelRequired: 2
