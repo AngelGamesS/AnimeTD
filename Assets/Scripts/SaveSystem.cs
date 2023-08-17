@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,12 @@ public class SaveSystem : MonoBehaviour
     {
         string potion = JsonUtility.ToJson(new PlayerData(playerExp,playerLevel, myLevelExp));
         System.IO.File.WriteAllText(Application.persistentDataPath + "/PlayerData.json", potion);
+    }
+
+    public void DeleteSaveFile()
+    {
+        if (System.IO.File.Exists(Application.persistentDataPath + "/PlayerData.json"))
+            System.IO.File.Delete(Application.persistentDataPath + "/PlayerData.json");
     }
 
     public PlayerData LoadFromJson()

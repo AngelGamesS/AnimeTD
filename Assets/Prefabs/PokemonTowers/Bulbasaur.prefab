@@ -909,7 +909,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _towerData:
     towerName: Bulbasaur
-    towerSprite: {fileID: 0}
+    towerSprite: {fileID: 21300000, guid: 5a8f8bdb61b246a44b9a115df83005c7, type: 3}
     towerDmg: 100
     towerRange: 9
     towerAttackInterveal: 3
@@ -920,9 +920,14 @@ MonoBehaviour:
     rangeUpgradePrice: 50
     attackIntervalUpgradePrice: 40
     upgradesDone: 0
+    attackUpgradesDone: 0
+    rangeUpgradesDone: 0
+    attackSpeedUpgradesDone: 0
   _layerMask:
     serializedVersion: 2
     m_Bits: 512
+  evolution: {fileID: 0}
+  evolutionMat: {fileID: 0}
   gameEventChannel: {fileID: 11400000, guid: f4e16f3309e8c3d4ea602ddca6072df6, type: 2}
   projectile: {fileID: 7106652715701454102, guid: bc2babdd05992d845bc0a0d4e14be44b,
     type: 3}
