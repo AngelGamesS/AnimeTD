@@ -62,10 +62,17 @@ public class GameUIController : MonoBehaviour
         gameEventChannel.OnUpdateExpAmount.AddListener(HandleExpChange);
         gameEventChannel.OnTowerSelected.AddListener(HandleTowerSelected);
 
+        gameEventChannel.OnPokemonEvolve.AddListener(HandlePokemonEvolve);
+
         HandleCoinUpdate(GameManager.Instance.GetCoin());
         HandleWaveHealthChange(GameManager.Instance.GetHP());
         HandleExpChange(GameManager.Instance.GetExp());
         HandleLevelUp(GameManager.Instance.GetLevel());
+    }
+
+    private void HandlePokemonEvolve(Tower tower)
+    {
+        Invoke("CloseSelectedPanel", 0.1f);
     }
 
     private void CloseSelectedPanel()

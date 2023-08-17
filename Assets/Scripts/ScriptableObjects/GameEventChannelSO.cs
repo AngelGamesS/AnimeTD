@@ -15,10 +15,12 @@ public class GameEventChannelSO : ScriptableObject
     public UnityEvent<int> OnCoinAmountUpdate;
     public UnityEvent<int> OnLevelUp;
     public UnityEvent<float> OnUpdateExpAmount;
+    public UnityEvent<Tower> OnPokemonEvolve;
 
     public void RaiseOnWinLose(bool status) => OnWinLose?.Invoke(status);
     public void RaiseOnTowerPlaced(TowerDataSO tower) => OnTowerPlaced?.Invoke(tower);
     public void RaiseOnTowerSelected(Tower tower) => OnTowerSelected?.Invoke(tower);
+    public void RaiseOnOnPokemonEvolve(Tower tower) => OnPokemonEvolve?.Invoke(tower);
     public void RaiseOnGameWaveStatusChange(bool status,int waveIndex) => OnGameWaveStatusChange?.Invoke(status,waveIndex);
     public void RaiseOnCurrentWaveHpChange(int cuurentAmount) => OnCurrentWaveHpChange?.Invoke(cuurentAmount);
     public void RaiseOnCoinAmountUpdate(int coins) => OnCoinAmountUpdate?.Invoke(coins);

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class SaveSystem : MonoBehaviour
 {
-    public void SaveIntoJson(float playerExp, int playerLevel)
+    public void SaveIntoJson(float playerExp, int playerLevel,float myLevelExp)
     {
-        string potion = JsonUtility.ToJson(new PlayerData(playerExp,playerLevel));
+        string potion = JsonUtility.ToJson(new PlayerData(playerExp,playerLevel, myLevelExp));
         System.IO.File.WriteAllText(Application.persistentDataPath + "/PlayerData.json", potion);
     }
 
@@ -28,10 +28,12 @@ public class PlayerData
 {
     public float playerExp;
     public int playerLevel;
+    public float myLevelExpToLevelUp;
 
-    public PlayerData(float playerExp, int playerLevel)
+    public PlayerData(float playerExp, int playerLevel,float myLevelExpToLevelUp)
     {
         this.playerExp = playerExp;
         this.playerLevel = playerLevel;
+        this.myLevelExpToLevelUp = myLevelExpToLevelUp;
     }
 }

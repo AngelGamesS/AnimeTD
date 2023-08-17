@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int _playerCoin = 0;
     public GameObject endPortal;
 
-    [SerializeField] private float MyLeveExpToLevelUp = 1000f;
+    [SerializeField] private float _myLevelExpToLevelUp = 1000f;
     [Header("Event Channels")]
     [SerializeField] private GameEventChannelSO gameEventChannel;
 
@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
         {
             _playerExp = data.playerExp;
             _playerLevel = data.playerLevel;
-
+            _myLevelExpToLevelUp = data.myLevelExpToLevelUp;
             Invoke("InvokedUpdatePlayerData", 0.1f);
         }
     }
@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
     private void InvokedUpdatePlayerData()
     {
         gameEventChannel.RaiseOnLevelUp(_playerLevel);
-        gameEventChannel.RaiseOnUpdateExpAmount((_playerExp / MyLeveExpToLevelUp) * 100f);
+        gameEventChannel.RaiseOnUpdateExpAmount((_playerExp / _myLevelExpToLevelUp) * 100f);
     }
 
     private void HandleWinLose(bool status)
@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
         if (status && WinUI != null)
         {
             WinUI.SetActive(true);
-            saveSystem.SaveIntoJson(_playerExp,_playerLevel);
+            saveSystem.SaveIntoJson(_playerExp,_playerLevel,_myLevelExpToLevelUp);
         }
     }
 
@@ -70,17 +70,17 @@ public class GameManager : MonoBehaviour
 
         gameEventChannel.RaiseOnCoinAmountUpdate(_playerCoin);
 
-        if(_playerExp / MyLeveExpToLevelUp > 1)
+        if(_playerExp / _myLevelExpToLevelUp > 1)
         {
             _playerLevel++;
             _playerExp = 0;
-            MyLeveExpToLevelUp = MyLeveExpToLevelUp * 1.5f + MyLeveExpToLevelUp;
+            _myLevelExpToLevelUp = _myLevelExpToLevelUp * 1.5f + _myLevelExpToLevelUp;
             gameEventChannel.RaiseOnLevelUp(_playerLevel);
-            gameEventChannel.RaiseOnUpdateExpAmount((_playerExp / MyLeveExpToLevelUp) * 100f);
+            gameEventChannel.RaiseOnUpdateExpAmount((_playerExp / _myLevelExpToLevelUp) * 100f);
 
         }
         else
-            gameEventChannel.RaiseOnUpdateExpAmount((_playerExp / MyLeveExpToLevelUp) * 100f);
+            gameEventChannel.RaiseOnUpdateExpAmount((_playerExp / _myLevelExpToLevelUp) * 100f);
     }
 
     public bool TryBuyTower(TowerDataSO selectedTower,Vector3 pos)
@@ -116,7 +116,7 @@ public class GameManager : MonoBehaviour
 
     public int GetHP() => _wavHp;
 
-    public float GetExp() => ((_playerExp / MyLeveExpToLevelUp) * 100f);
+    public float GetExp() => ((_playerExp / _myLevelExpToLevelUp) * 100f);
 
     public int GetLevel() => _playerLevel;
 }
