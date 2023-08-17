@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerName: Pidgey
   description: Patroling and killing!
-  image: {fileID: 21300000, guid: deefcdf17c97ac04dba64790fb2ace4f, type: 3}
+  image: {fileID: 21300000, guid: 8f40ef17c83b4444e8d40d5971f7dcda, type: 3}
   prefab: {fileID: 8405732340071121871, guid: 27ef3d026176b8244a292b9afbd3241b, type: 3}
   price: 150
   minLevelRequired: 2

@@ -2177,8 +2177,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _towerData:
     towerName: Pidgey
-    towerSprite: {fileID: 0}
-    towerDmg: 100
+    towerSprite: {fileID: 21300000, guid: 8f40ef17c83b4444e8d40d5971f7dcda, type: 3}
+    towerDmg: 110
     towerRange: 6
     towerAttackInterveal: 3
     towerDmgIncreace: 3
@@ -2188,9 +2188,14 @@ MonoBehaviour:
     rangeUpgradePrice: 50
     attackIntervalUpgradePrice: 50
     upgradesDone: 0
+    attackUpgradesDone: 0
+    rangeUpgradesDone: 0
+    attackSpeedUpgradesDone: 0
   _layerMask:
     serializedVersion: 2
     m_Bits: 512
+  evolution: {fileID: 0}
+  evolutionMat: {fileID: 0}
   gameEventChannel: {fileID: 11400000, guid: f4e16f3309e8c3d4ea602ddca6072df6, type: 2}
   RotationSpeed: 1
   CircleRadius: 6
