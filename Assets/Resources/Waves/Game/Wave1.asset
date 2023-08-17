@@ -20,21 +20,22 @@ MonoBehaviour:
       - {fileID: 4513815490189685681, guid: 3ea0fcfcbcf60bd4cadf082178e043ca, type: 3}
       timeToNextEnemy: 1
       timeToNextWaveInterval: 5
-      enemiesLeft: 2
+      enemiesLeft: 3
     - enemies:
       - {fileID: 4513815490189685681, guid: 3ea0fcfcbcf60bd4cadf082178e043ca, type: 3}
+      - {fileID: 3659307160270442765, guid: e72fffe808a784b4ab04f7fca247c3b6, type: 3}
       - {fileID: 4513815490189685681, guid: 3ea0fcfcbcf60bd4cadf082178e043ca, type: 3}
       - {fileID: 4513815490189685681, guid: 3ea0fcfcbcf60bd4cadf082178e043ca, type: 3}
-      - {fileID: 4513815490189685681, guid: 3ea0fcfcbcf60bd4cadf082178e043ca, type: 3}
+      - {fileID: 3659307160270442765, guid: e72fffe808a784b4ab04f7fca247c3b6, type: 3}
       - {fileID: 4513815490189685681, guid: 3ea0fcfcbcf60bd4cadf082178e043ca, type: 3}
       - {fileID: 4513815490189685681, guid: 3ea0fcfcbcf60bd4cadf082178e043ca, type: 3}
       - {fileID: 4513815490189685681, guid: 3ea0fcfcbcf60bd4cadf082178e043ca, type: 3}
       timeToNextEnemy: 1
       timeToNextWaveInterval: 10
-      enemiesLeft: 3
+      enemiesLeft: 7
     - enemies:
       - {fileID: 8831324749294507782, guid: 812d077fdf0e7a1409f62bb9d33dd10b, type: 3}
       - {fileID: 8831324749294507782, guid: 812d077fdf0e7a1409f62bb9d33dd10b, type: 3}
       timeToNextEnemy: 5
       timeToNextWaveInterval: Infinity
-      enemiesLeft: 3
+      enemiesLeft: 2

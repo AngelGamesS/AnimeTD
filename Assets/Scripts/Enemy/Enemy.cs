@@ -37,8 +37,11 @@ public class Enemy : MonoBehaviour
         {
             GameManager.Instance.HandleEnemyDeath(exp, coin);
             Destroy(gameObject);
-            var go = Instantiate(deathEffect, transform.position, transform.rotation);
-            Destroy(go, 5f);
+            if(deathEffect != null)
+            {
+                var go = Instantiate(deathEffect, transform.position, transform.rotation);
+                Destroy(go, 5f);
+            }
         }
     }
     private void OnDestroy()

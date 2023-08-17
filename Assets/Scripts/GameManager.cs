@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
 
     private void HandleWinLose(bool status)
     {
-        if (status)
+        if (status && WinUI != null)
         {
             WinUI.SetActive(true);
             saveSystem.SaveIntoJson(_playerExp,_playerLevel);

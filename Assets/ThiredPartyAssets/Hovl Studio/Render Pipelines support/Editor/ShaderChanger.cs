@@ -14,14 +14,10 @@ namespace HovlStudio
     {
         static RPChanger()
         {
-            if (!File.Exists("Assets/Hovl Studio/Render Pipelines support/startupCheck.asset"))
+            if (File.Exists(AssetDatabase.GUIDToAssetPath("840fe54da571a73489cfb0206103fe17")))
             {
-                TextAsset text = new TextAsset();
-                if (Directory.Exists("Assets/Hovl Studio/Render Pipelines support"))
-                {
-                    AssetDatabase.CreateAsset(text, "Assets/Hovl Studio/Render Pipelines support/startupCheck.asset");
-                    ShowWindow();
-                }
+                ShowWindow();
+                AssetDatabase.DeleteAsset(AssetDatabase.GUIDToAssetPath("840fe54da571a73489cfb0206103fe17"));
             }
         }
 
@@ -245,8 +241,6 @@ namespace HovlStudio
                     ChangeToURP();
                     break;
                 case 2:
-                    ChangeToHDRP();
-                    ChangeToSRP();
                     ChangeToHDRP();
                     break;
                 default:
