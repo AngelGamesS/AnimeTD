@@ -2256,7 +2256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _towerData:
     towerName: Charmander
-    towerSprite: {fileID: 0}
+    towerSprite: {fileID: 21300000, guid: b1a9a339df4b7364482cd008f34f9e1e, type: 3}
     towerDmg: 100
     towerRange: 8
     towerAttackInterveal: 3.5
