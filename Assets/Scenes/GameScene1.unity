@@ -3231,7 +3231,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 870188053}
-  m_LocalRotation: {x: 0.38268346, y: -0.000000022481217, z: 0.000000009312026, w: 0.92387956}
+  m_LocalRotation: {x: 0.38268346, y: 0.00000002248122, z: -0.000000009312027, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 10, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4430,7 +4430,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1175305156}
-  m_LocalRotation: {x: 0.38268346, y: -0.000000022481217, z: 0.000000009312026, w: 0.92387956}
+  m_LocalRotation: {x: 0.38268346, y: 0.00000002248122, z: -0.000000009312027, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 10, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4833,6 +4833,8 @@ MonoBehaviour:
   spawnPoint: {fileID: 1583686578}
   waves:
   - {fileID: 11400000, guid: ff996bce1b726e141af52340852e23bd, type: 2}
+  - {fileID: 11400000, guid: 3c957619ff9158d4b9a4f51917321f28, type: 2}
+  - {fileID: 11400000, guid: 0277c98c2af195b419c0488bbce9c1e2, type: 2}
   currentWaveIntervalIndex: 0
   gameEventChannel: {fileID: 11400000, guid: f4e16f3309e8c3d4ea602ddca6072df6, type: 2}
 --- !u!1001 &1326230891
@@ -7069,9 +7071,9 @@ MonoBehaviour:
   saveSystem: {fileID: 573400501}
   WinUI: {fileID: 592707868}
   _wavHp: 50
-  _playerLevel: 2
+  _playerLevel: 1
   _playerExp: 0
-  _playerCoin: 10000
+  _playerCoin: 1000
   endPortal: {fileID: 528813903}
   _myLevelExpToLevelUp: 300
   gameEventChannel: {fileID: 11400000, guid: f4e16f3309e8c3d4ea602ddca6072df6, type: 2}

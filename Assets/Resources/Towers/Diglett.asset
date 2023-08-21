@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerName: Diglett
   description: Dig You enemies grave!
-  image: {fileID: 21300000, guid: 00f6626af2c7ec3479e1e58f405d9ef4, type: 3}
+  image: {fileID: 21300000, guid: d3d7c84c217cf2648b3951a838f1c6b9, type: 3}
   prefab: {fileID: 2985825462077607564, guid: 9e208684457f6794896f2a061d50b10a, type: 3}
   price: 250
   minLevelRequired: 3
