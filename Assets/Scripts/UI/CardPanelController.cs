@@ -77,4 +77,9 @@ public class CardPanelController : MonoBehaviour
         closeBTN.style.visibility = Visibility.Hidden;
         sv.RemoveFromClassList("moveUp");
     }
+
+    private void OnDisable()
+    {
+        HidePanel();
+    }
 }

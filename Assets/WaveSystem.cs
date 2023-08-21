@@ -104,7 +104,7 @@ public class WaveSystem : MonoBehaviour
                 
                 
                 currentWaveInterval.enemiesLeft--;
-
+                if (currentWaveInterval.enemiesLeft == 0) _spawningWave = false;
                 yield return new WaitForSeconds(currentWaveInterval.timeToNextEnemy);
             }
         }
